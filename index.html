@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Loja</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <style>
+        
+        body {
+            font-family: "Montserrat", sans-serif;
+            background-color: rgb(230, 226, 182);
+        }
+
+        .img-carrossel {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .letraPreta {
+            color: black !important;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease; 
+        }
+
+        .letraPreta:hover {
+            color: rgb(61, 57, 4) !important; 
+        }
+
+        .img-card-padrao {
+            height: 250px; 
+            width: 100%; 
+            object-fit: contain; 
+            background-color: #ffffff; 
+            padding: 15px; 
+            border-top-left-radius: 8px; 
+            border-top-right-radius: 8px;
+        }
+
+        
+        .card-produto {
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(17, 14, 14, 0.05); 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-produto:hover {
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1); 
+        }
+        .linha-imagens {
+            display: flex;                    
+            gap: 5px;                    
+        }
+
+        .linha-imagens img {
+            max-width: 100%;              
+            height: auto;
+            width: 535px;                
+            }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg" style="background-color: rgb(155, 145, 4);">
+        <div class="container-fluid container w-50">
+            <div class="d-flex align-items-center">
+                <img src="/imagens/logoSantaLola.png" alt="Logo Santa Lola" style="height: 40px; margin-right: 10px;">
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-medium">
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/paginas/login.html">Login</a>
+                </li>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Categorias
+                </a>
+                <ul class="dropdown-menu border-0 shadow-sm">
+                    <li><a class="dropdown-item" href="/paginas/calcados.html">Sapatos</a></li>
+                    <li><a class="dropdown-item" href="/paginas/bolsas.html">Bolsas</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item fw-bold text-danger" href="/paginas/sales.html">Sale</a></li>
+                </ul>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2 border-0" type="search" placeholder="Buscar..." aria-label="Search"/>
+                <button class="btn fw-bold" type="submit" style="background-color: rgb(61, 57, 4); color: rgb(241, 236, 236);" >Buscar</button>
+            </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid px-0">
+        <div id="carrosselProdutos" class="carousel slide" data-bs-ride="carousel" style="height: 50vh; width: 100%;">
+            
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carrosselProdutos" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carrosselProdutos" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carrosselProdutos" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carrosselProdutos" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+
+            <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                    <img src="/imagens/chinelo.png" class="img-carrossel" alt="Chinelo">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="/imagens/Bota.png" class="img-carrossel" alt="Bota">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="/imagens/Bolsa.png" class="img-carrossel" alt="Bolsa">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="/imagens/TenisMasculino.png" class="img-carrossel" alt="Tênis Masculino">
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carrosselProdutos" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carrosselProdutos" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <ul class="nav justify-content-center gap-4">
+            <li class="nav-item">
+                <a href="/paginas/calcados.html" class="nav-link letraPreta mt-4" style="background-color: transparent; border: none; padding: 0;">Calçados</a>
+            </li>
+            <li class="nav-item">
+                <a href="/paginas/bolsas.html" class="nav-link letraPreta mt-4" style="background-color: transparent; border: none; padding: 0;">Bolsas</a>
+            </li>
+            <li class="nav-item">   
+                <a href="/paginas/sale.html" class="nav-link letraPreta text-danger mt-4 mb-4" style="background-color: transparent; border: none; padding: 0;">SALE</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container mt-4 mb-5">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 justify-content-center">
+            
+            <div class="col d-flex justify-content-center">
+                <div class="card card-produto" style="width: 18rem;">
+                    <img src="/imagens/chinelo.png" class="card-img-top img-card-padrao" alt="Chinelo">
+                    <div class="card-body text-center">
+                        <h6 class="card-title fw-bold">Chinelo Santa Lolla</h6>
+                        <p class="card-text fw-bold mb-3">R$ 99,90</p>
+                        <a href="#" class="btn w-100 fw-bold" style="background-color: rgb(61, 57, 4); color: rgb(241, 236, 236);">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col d-flex justify-content-center">
+                <div class="card card-produto" style="width: 18rem;">
+                    <img src="/imagens/Bota.png" class="card-img-top img-card-padrao" alt="Bota">
+                    <div class="card-body text-center">
+                        <h6 class="card-title fw-bold">Bota Couro</h6>
+                        <p class="card-text fw-bold mb-3">R$ 299,90</p>
+                        <a href="#" class="btn w-100 fw-bold" style="background-color: rgb(61, 57, 4); color: rgb(241, 236, 236);">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col d-flex justify-content-center">
+                <div class="card card-produto" style="width: 18rem;">
+                    <img src="/imagens/Bolsa.png" class="card-img-top img-card-padrao" alt="Bolsa">
+                    <div class="card-body text-center">
+                        <h6 class="card-title fw-bold">Bolsa Tiracolo</h6>
+                        <p class="card-text fw-bold mb-3">R$ 199,90</p>
+                        <a href="#" class="btn w-100 fw-bold" style="background-color: rgb(61, 57, 4); color: rgb(241, 236, 236);">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col d-flex justify-content-center">
+                <div class="card card-produto" style="width: 18rem;">
+                    <img src="/imagens/TenisMasculino.png" class="card-img-top img-card-padrao" alt="Tênis Masculino">
+                    <div class="card-body text-center">
+                        <h6 class="card-title fw-bold">Tênis Casual</h6>
+                        <p class="card-text fw-bold mb-3">R$ 249,90</p>
+                        <a href="#" class="btn w-100 fw-bold" style="background-color: rgb(61, 57, 4); color: rgb(241, 236, 236);">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<hr class="mb-4 container" style="border-top: 1px solid rgb(155, 145, 4);">    
+
+<div class="linha-imagens">
+    <img src="/imagens/salto.png" alt="Salto Alto">
+    <img src="/imagens/papete.png" alt="Papete">
+    <img src="/imagens/bolsinha.png" alt="Bolsinha pequena">
+</div>
+
+<footer class="container-fluid mt-5 pt-5 pb-3" style="background-color: rgb(61, 57, 4); color: rgb(241, 236, 236); border-color: rgb(146, 30, 30);">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-4 mb-4">
+                    <h6 class="fw-bold mb-3 text-uppercase">Atendimento ao Cliente</h6>
+                    <p class="mb-1"><i class="bi bi-telephone"></i> SAC: 0800 123 4567</p>
+                    <p class="mb-1"><i class="bi bi-whatsapp"></i> WhatsApp: (11) 99999-9999</p>
+                    <p class="mb-1"><i class="bi bi-envelope"></i> sac@santalolla.com.br</p>
+                    <p class="small mt-3" style="color: #b8b69b;">
+                        Horário de atendimento:<br>
+                        Segunda a Sexta, das 09h às 18h
+                    </p>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <h6 class="fw-bold mb-3 text-uppercase">Ajuda e Suporte</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none" style="color: rgb(241, 236, 236);">Dúvidas Frequentes (FAQ)</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none" style="color: rgb(241, 236, 236);">Trocas e Devoluções</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none" style="color: rgb(241, 236, 236);">Prazos de Entrega</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none" style="color: rgb(241, 236, 236);">Rastreie seu Pedido</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <h6 class="fw-bold mb-3 text-uppercase text-center text-md-start">Segurança</h6>
+                    
+                    <div class="d-flex flex-column align-items-center align-items-md-start gap-3">
+                        <img src="https://play-lh.googleusercontent.com/0p7Cge-Na84e8fPT50svCr-fIYvdqCjdBOyUfbEtbZXwY4NTjuh0mqpzlu4YEED-9mw=w240-h480-rw" alt="Selo Reclame Aqui" style="height: 35px; width: fit-content; background-color: white; padding: 5px; border-radius: 4px;">
+                        
+                        <div class="d-flex align-items-center gap-2">
+                                <svg fill="#f1ecec" style="width: 24px; height: 24px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>whatsapp</title><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7 8.5 7 9.71C7 10.93 7.89 12.1 8 12.27C8.14 12.44 9.76 14.94 12.25 16C12.84 16.27 13.3 16.42 13.66 16.53C14.25 16.72 14.79 16.69 15.22 16.63C15.7 16.56 16.68 16.03 16.89 15.45C17.1 14.87 17.1 14.38 17.04 14.27C16.97 14.17 16.81 14.11 16.56 14C16.31 13.86 15.09 13.26 14.87 13.18C14.64 13.1 14.5 13.06 14.31 13.3C14.15 13.55 13.67 14.11 13.53 14.27C13.38 14.44 13.24 14.46 13 14.34C12.74 14.21 11.94 13.95 11 13.11C10.26 12.45 9.77 11.64 9.62 11.39C9.5 11.15 9.61 11 9.73 10.89C9.84 10.78 10 10.6 10.1 10.45C10.23 10.31 10.27 10.2 10.35 10.04C10.43 9.87 10.39 9.73 10.33 9.61C10.27 9.5 9.77 8.26 9.56 7.77C9.36 7.29 9.16 7.35 9 7.34C8.86 7.34 8.7 7.33 8.53 7.33Z" /></svg>
+                            <span class="small">Site 100% Seguro</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <hr class="mt-4 mb-3" style="border-color: rgba(29, 21, 21, 0.2);">
+            <div class="text-center small" style="color: #b8b69b;">
+                &copy; 2026 Loja Santa Lolla. Criado por Mayza Bernardi.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
